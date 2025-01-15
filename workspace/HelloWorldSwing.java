@@ -1,28 +1,24 @@
 import javax.swing.*;        
-
+// creates and displays a GUI with a "Hello World" label.
 public class HelloWorldSwing {
-    /**
-     * Create the GUI and show it.  For thread safety,
-     * this method should be invoked from the
-     * event-dispatching thread.
-     */
+    //Precondition: Swing must be running on the Event Dispatch Thread (EDT) for thread safety.
+    //Postcondition: A JFrame containing a JLabel with "Hello World" text is displayed.
     private static void createAndShowGUI() {
-        //Create and set up the window.
+    
         JFrame frame = new JFrame("HelloWorldSwing");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //Add the ubiquitous "Hello World" label.
+       
         JLabel label = new JLabel("Hello World");
         frame.getContentPane().add(label);
 
-        //Display the window.
+       
         frame.pack();
         frame.setVisible(true);
     }
-
+    //Precondition: The program must be executed as a Java application.
+    //Postcondition: Schedules the creation and display of the GUI.
     public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
